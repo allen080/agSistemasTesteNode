@@ -56,7 +56,7 @@ export default function FormularioProduto() {
             id="nome"
             value={nome}
             onChange={(e) => setNome(e.target.value)}
-            placeholder="Digite o nome do produto"
+            placeholder="Nome do produto"
             required
           />
         </div>
@@ -68,7 +68,7 @@ export default function FormularioProduto() {
             id="preco"
             value={preco}
             onChange={(e) => setPreco(e.target.value)}
-            placeholder="Digite o preço do produto"
+            placeholder="Preço"
             step="0.01"
             required
           />
@@ -80,7 +80,7 @@ export default function FormularioProduto() {
             id="descricao"
             value={descricao}
             onChange={(e) => setDescricao(e.target.value)}
-            placeholder="Digite a descrição do produto"
+            placeholder="Descrição"
             required
           />
         </div>
