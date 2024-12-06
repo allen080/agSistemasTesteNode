@@ -8,7 +8,8 @@ formato de formulário.
 
 ### Instruções para execução:
   - Estar com a API do exercicio1 rodando na porta 3000
-  - rodar comando na pasta exercicio2/crud-produtos: **npm start** (abrirá na porta 3001)
+  - instalar as dependências (exercicio2/crud-produtos): **npm install** 
+  - rodar o app: **npm start** (abrirá na porta 3001)
 
 ## Execução das rotas necessárias
 
