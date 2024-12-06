@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsPositive, IsDecimal, IsString } from 'class-validator';
+import { IsNotEmpty, IsPositive, IsNumber, IsString } from 'class-validator';
 
 export class CreateProdutoDto {
   @IsNotEmpty({ message: 'O nome é obrigatório.' })
@@ -7,7 +7,7 @@ export class CreateProdutoDto {
 
   @IsNotEmpty({ message: 'O preço é obrigatório.' })
   @IsPositive({ message: 'O preço deve ser um número positivo.' })
-  @IsDecimal({}, { message: 'O preço deve ter no máximo duas casas decimais.' })
+  @IsNumber({maxDecimalPlaces: 2})
   preco: number;
 
   @IsNotEmpty({ message: 'A descrição é obrigatória.' })

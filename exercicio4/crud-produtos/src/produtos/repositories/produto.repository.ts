@@ -19,7 +19,7 @@ export class ProdutoRepository {
   }
 
   async findById(id: number): Promise<Produto | undefined> {
-    return this.repository.findOne({where:{id}});
+    return this.repository.findOneBy({id});
   }
 
   async update(id: number, produto: Partial<Produto>): Promise<void> {
