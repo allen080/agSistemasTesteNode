@@ -5,13 +5,12 @@ import "./FormularioProduto.css";
 const URL_API = "http://localhost:3000";
 
 export default function FormularioProduto() {
-  // Estados do formulário
   const [nome, setNome] = useState("");
   const [preco, setPreco] = useState("");
   const [descricao, setDescricao] = useState("");
   const [mensagem, setMensagem] = useState("");
 
-  const handleSubmit = async (event) => { // envio do form
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if(!nome || !preco || !descricao) {
@@ -23,20 +22,18 @@ export default function FormularioProduto() {
     }
 
     try {
-      // Envia os dados para a API
+      // envia pra API
       const response = await axios.post(`${URL_API}/produtos`, {
         nome,
         preco: parseFloat(preco).toFixed(2), // Garante duas casas decimais
         descricao,
       });
 
-      // Exibe mensagem de sucesso
       setMensagem("[*] Produto cadastrado com sucesso!");
       console.log(response.data);
 
       setNome(""); setPreco(""); setDescricao("");
     } catch (error) {
-      // Trata erros e exibe mensagem de erro
       setMensagem("[!] Erro ao cadastrar o produto.");
       console.error(error);
     }
